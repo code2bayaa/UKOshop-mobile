@@ -1,0 +1,29 @@
+name: uko_shop
+description: >
+  UKO shop — the buyer's and seller's app. Browse what is on the shelves near you, check out through
+  escrow, follow the rider to your door, and post an ad from your pocket. Talks to the shop API
+  (shop/back-end, port 8008).
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  # The HTTP client and uploads, the theme, the wireframe chrome and the widgets. Kept at
+  # mobile/uko_core so no app owns it. The shop does NOT use uko_core's AuthController: a shop account
+  # is not a partner account (see lib/src/auth.dart).
+  uko_core:
+    path: ../../../mobile/uko_core
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
